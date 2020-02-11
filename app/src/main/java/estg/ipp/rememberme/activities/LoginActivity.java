@@ -1,4 +1,4 @@
-package estg.ipp.rememberme;
+package estg.ipp.rememberme.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,8 +38,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.squareup.picasso.Picasso;
+
+import estg.ipp.rememberme.MainActivity;
+import estg.ipp.rememberme.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -149,8 +151,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
-
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
 
             @Override
@@ -173,9 +173,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 String email = emailId.getText().toString();
                 String pwd = password.getText().toString();
+
                 if(email.isEmpty()){
                     emailId.setError("Please enter the email");
                     emailId.requestFocus();

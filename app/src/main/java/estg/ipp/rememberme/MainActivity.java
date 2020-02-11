@@ -16,6 +16,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import estg.ipp.rememberme.activities.HomeActivity;
+import estg.ipp.rememberme.activities.LoginActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText emailId, password;
