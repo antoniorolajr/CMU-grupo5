@@ -6,4 +6,8 @@
 
     <color name="colorWhite">#fff</color>
     <color name="colorGrey">#c3c3c3</color>
+
+    <color name="bluefab">#0471A6</color>
+    <color name="orange2">#ff9900</color>
+    <color name="lightYellow">#ffffb3</color>
 </resources>

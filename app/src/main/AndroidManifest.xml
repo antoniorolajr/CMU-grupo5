@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="estg.ipp.rememberme">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.HomeActivity"></activity>
+        <activity android:name=".activities.NutricaoActivity"></activity>
+        <activity android:name=".activities.ClinicasActivity" />
+        <activity android:name=".activities.Games_Activity" />
+        <activity android:name=".activities.MedicamentoActivity" />
+        <activity android:name=".activities.HomeActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -21,9 +25,9 @@
             </intent-filter>
         </activity>
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
     </application>
 
 </manifest>

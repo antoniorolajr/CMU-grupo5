@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MedicamentoActivity"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark">
+
+            <include layout="@layout/layout_medicamento_toolbar"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/descricao_medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="2dp"
+        android:text="Descrição do medicamento:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/descricao2_medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:gravity="top"
+        android:hint="Descrição do medicamento..."
+        android:imeOptions="flagNoExtractUi"
+        android:padding="2dp"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/stock_medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:padding="2dp"
+        android:text="Stock do medicamento:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/stock2_medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="top"
+        android:hint="Indique a quantidade inicial..."
+        android:imeOptions="flagNoExtractUi"
+        android:padding="2dp"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/local_medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="2dp"
+        android:text="Local:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/local2_medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="top"
+        android:hint="Local onde tomar..."
+        android:imeOptions="flagNoExtractUi"
+        android:padding="2dp"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/hora_medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Hora:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
+        android:padding="2dp"/>
+
+    <EditText
+        android:id="@+id/hora2_medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="top"
+        android:hint="Hora da toma..."
+        android:imeOptions="flagNoExtractUi"
+        android:padding="2dp"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+
+</LinearLayout>
