@@ -66,7 +66,7 @@ public class FragmentHome extends Fragment {
 
                 }
                 if(position == 1) {
-                    Intent intent = new Intent(getContext(), NutricaoActivity.class);
+                    Intent intent = new Intent(getContext(),NutricaoActivity.class );
                     startActivity(intent);
 
                 }

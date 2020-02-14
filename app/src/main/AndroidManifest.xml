@@ -3,6 +3,11 @@
     package="estg.ipp.rememberme">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.AritmeticGame1Activity"></activity>
+        <activity android:name=".activities.ScanCode"></activity>
+        <activity android:name=".activities.AritmeticGame1Activity" />
         <activity android:name=".activities.GaleriaPaisesActivity" />
         <activity android:name=".activities.PaisesActivity" />
         <activity android:name=".activities.AritmeticGameActivity" />
