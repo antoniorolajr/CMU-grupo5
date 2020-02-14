@@ -25,6 +25,7 @@ import estg.ipp.rememberme.activities.ClinicasActivity;
 import estg.ipp.rememberme.activities.Games_Activity;
 import estg.ipp.rememberme.activities.LoginActivity;
 import estg.ipp.rememberme.activities.NutricaoActivity;
+import estg.ipp.rememberme.activities.PaisesActivity;
 
 public class FragmentHome extends Fragment {
 
@@ -36,17 +37,17 @@ public class FragmentHome extends Fragment {
 
     ListView listView;
 
-    String mTitle[] = {"Clínicas" , "Alimentos" , "Jogo"};
-    String mDescription[] = {"Ver Clínicas" ,"Lembrar alimentos", "Jogo de memória"};
+    String mTitle[] = {"Clínicas" , "Alimentos" , "Jogos" , "Países"};
+    String mDescription[] = {"Ver Clínicas" ,"Restrições Nutritivas", "Jogos de Memória" , "Recorde alguns países"};
 
-    int images[] = {R.drawable.clinica, R.drawable.food, R.drawable.games};
+    int images[] = {R.drawable.clinica, R.drawable.food, R.drawable.games, R.drawable.paises};
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home_layout,container,false);
-        listView = view.findViewById(R.id.listView11);
+        listView = view.findViewById(R.id.listViewHome);
 
 
         Toolbar toolbar = view.findViewById(R.id.toolbar_home);
@@ -74,12 +75,12 @@ public class FragmentHome extends Fragment {
                     startActivity(intent);
 
                 }
-
-
+                if(position == 3) {
+                    Intent intent = new Intent(getContext(), PaisesActivity.class);
+                    startActivity(intent);
+                }
             }
         });
-
-
 
         return view;
     }
@@ -99,7 +100,6 @@ public class FragmentHome extends Fragment {
             this.rTitle = title;
             this.rDescription = description;
             this.rImgs = imgs;
-
 
         }
 

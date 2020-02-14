@@ -25,28 +25,11 @@ public class HomeActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
-    //Button btnLogout;
-    //FirebaseAuth mFirebaseAuth;
-    //private FirebaseAuth.AuthStateListener mAuthStateListener;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        /*btnLogout = findViewById(R.id.buttonLogout);
-
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intentoMain= new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(intentoMain);
-            }
-        });
-
-         */
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 

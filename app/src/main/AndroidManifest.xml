@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.NutricaoActivity"></activity>
+        <activity android:name=".activities.AritmeticGame1Activity"></activity>
+        <activity android:name=".activities.GaleriaPaisesActivity" />
+        <activity android:name=".activities.PaisesActivity" />
+        <activity android:name=".activities.AritmeticGameActivity" />
+        <activity android:name=".activities.CardsGameActivity" />
+        <activity android:name=".activities.NutricaoActivity" />
         <activity android:name=".activities.ClinicasActivity" />
         <activity android:name=".activities.Games_Activity" />
         <activity android:name=".activities.MedicamentoActivity" />

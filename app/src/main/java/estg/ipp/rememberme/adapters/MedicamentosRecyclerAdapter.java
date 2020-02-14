@@ -42,7 +42,6 @@ public class MedicamentosRecyclerAdapter extends RecyclerView.Adapter<Medicament
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        /*
         try {
 
             String month = mMedicamentos.get(i).getData_registo_medicamento().substring(0,2);
@@ -51,21 +50,13 @@ public class MedicamentosRecyclerAdapter extends RecyclerView.Adapter<Medicament
             String year = mMedicamentos.get(i).getData_registo_medicamento().substring(3);
             String date = month + " " + year;
 
-
+            viewHolder.data_registo_medicamento.setText(date);
+            viewHolder.nome_medicamento.setText(mMedicamentos.get(i).getNome_medicamento());
+            viewHolder.descricao_medicamento.setText(mMedicamentos.get(i).getDescricao_medicamento());
 
         }catch(NullPointerException e){
             Log.e(TAG, "onBindViewHolder: NullPointerException"+ e.getMessage() );
         }
-        */
-
-        viewHolder.data_registo_medicamento.setText(mMedicamentos.get(i).getData_registo_medicamento());
-        viewHolder.nome_medicamento.setText(mMedicamentos.get(i).getNome_medicamento());
-        viewHolder.descricao_medicamento.setText(mMedicamentos.get(i).getDescricao_medicamento());
-        //viewHolder.stock.setText(mMedicamentos.get(i).getStock());
-        //viewHolder.local.setText(mMedicamentos.get(i).getLocal_da_toma());
-        //viewHolder.hora.setText(mMedicamentos.get(i).getHora_da_toma());
-
-
 
     }
 
@@ -85,9 +76,6 @@ public class MedicamentosRecyclerAdapter extends RecyclerView.Adapter<Medicament
             nome_medicamento = itemView.findViewById(R.id.nome_medicamento);
             data_registo_medicamento = itemView.findViewById(R.id.data_registo);
             descricao_medicamento = itemView.findViewById(R.id.descricao_medicamento);
-            //stock = itemView.findViewById(R.id.stock_medicamento);
-            //local = itemView.findViewById(R.id.local_medicamento);
-            //hora = itemView.findViewById(R.id.hora_medicamento);
 
             this.onMedicamentoListener = onMedicamentoListener;
 

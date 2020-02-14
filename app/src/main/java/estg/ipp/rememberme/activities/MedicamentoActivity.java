@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -22,7 +24,7 @@ import estg.ipp.rememberme.models.Medicamento;
 import estg.ipp.rememberme.util.Utility;
 
 public class MedicamentoActivity extends AppCompatActivity implements View.OnTouchListener,
-        GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener,View.OnClickListener {
+        GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener,View.OnClickListener, TextWatcher {
 
     private static final String TAG = "MedicamentoActivity";
 
@@ -35,15 +37,13 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
     private RelativeLayout mCheckContainer, mBackArrowContainer;
     private ImageButton mCheck, mBackArrow;
 
-    //variables
+    //vars
     private boolean mIsNewMedicamento;
     private Medicamento mMedicamentoInicial;
     private GestureDetector mGestureDetector;
     private int mMode;
     private Repository mRepository;
     private Medicamento mMedicamentoFinal;
-
-
 
 
     @Override
@@ -93,7 +93,7 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
         mViewNome.setOnClickListener(this);
         mCheck.setOnClickListener(this);
         mBackArrow.setOnClickListener(this);
-        //mEditNome.addTextChangedListener(this);
+        mEditNome.addTextChangedListener(this);
 
     }
 
@@ -102,7 +102,20 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
         if(getIntent().hasExtra("selected_med")){
             mMedicamentoInicial = getIntent().getParcelableExtra("selected_med");
             //Log.d(TAG, "getIncomingIntent:  "+ mMedicamentoInicial.toString());
+
             //mMedicamentoFinal = getIntent().getParcelableExtra("selected_med");
+            //Log.d(TAG, "getIncomingIntent:  "+ mMedicamentoFinal.toString());
+
+            //no update
+            //se mMedicamentoFinal for alterado , mMedicamentoInicial também é alterado porque partilham a mesma posição na memória
+            mMedicamentoFinal = new Medicamento();
+            mMedicamentoFinal.setNome_medicamento(mMedicamentoInicial.getNome_medicamento());
+            mMedicamentoFinal.setDescricao_medicamento(mMedicamentoInicial.getDescricao_medicamento());
+            mMedicamentoFinal.setData_registo_medicamento(mMedicamentoInicial.getData_registo_medicamento());
+            mMedicamentoFinal.setStock(mMedicamentoInicial.getStock());
+            mMedicamentoFinal.setLocal_da_toma(mMedicamentoInicial.getLocal_da_toma());
+            mMedicamentoFinal.setHora_da_toma(mMedicamentoInicial.getHora_da_toma());
+            mMedicamentoFinal.setId(mMedicamentoInicial.getId());
 
             mMode = EDIT_MODE_DISABLED;
             mIsNewMedicamento = false;
@@ -153,7 +166,6 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
         mHora.setCursorVisible(false);
         mHora.clearFocus();
 
-
     }
 
     //ativa a interação com o edittext dos campos a preencher
@@ -178,7 +190,6 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
         mHora.setFocusableInTouchMode(true);
         mHora.setCursorVisible(true);
         mHora.requestFocus();
-
 
     }
 
@@ -208,7 +219,6 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
         hideSoftKeyboard();
 
 
-
         //verifica se alterou o medicamento , nao guarda se nao alterar
         //só altera se editar o titulo e a descrição para não ficar em branco
         String temp = mDescricao.getText().toString();
@@ -233,20 +243,20 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
         //replace new lines with blankspace
         temp3 = temp3.replace("\n", "");
         //replace blankspace for nothing
-        temp3 = temp3.replace("", "");
+        temp3 = temp3.replace(" ", "");
 
 
         if((temp.length() > 0) && (temp1.length() > 0)&& (temp2.length() > 0)&& (temp3.length() > 0)) {
-            mMedicamentoFinal.setNome_medicamento(mDescricao.getText().toString());
+            mMedicamentoFinal.setNome_medicamento(mEditNome.getText().toString());
             mMedicamentoFinal.setDescricao_medicamento(mDescricao.getText().toString());
             mMedicamentoFinal.setStock(mStock.getText().toString());
             mMedicamentoFinal.setLocal_da_toma(mLocal.getText().toString());
             mMedicamentoFinal.setHora_da_toma(mHora.getText().toString());
 
             //define data de registo do medicamento
-            //String date = Utility.getCurrentData();
-            //mMedicamentoFinal.setDate(date);
-            String data = "Fevereira 2020";
+            String data = Utility.getCurrentData();
+            //mMedicamentoFinal.setData(date);
+            //String data = "Fevereiro 2020";
             mMedicamentoFinal.setData_registo_medicamento(data);
 
             //se o medicamento for alterado guarda-o
@@ -255,11 +265,10 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
                     !mMedicamentoFinal.getStock().equals(mMedicamentoInicial.getStock()) ||
                     !mMedicamentoFinal.getHora_da_toma().equals(mMedicamentoInicial.getHora_da_toma()) ||
                     !mMedicamentoFinal.getLocal_da_toma().equals(mMedicamentoInicial.getLocal_da_toma())){
+                Log.d(TAG, "disableEditMode: called!!");
                 saveChanges();
             }
         }
-
-
 
     }
 
@@ -398,5 +407,21 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
         if(mMode == EDIT_MODE_ENABLED) {
             enableEditMode();
         }
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    //quando muda o titulo e carrega confirmar, o titulo do medicamento muda logo
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        mViewNome.setText(charSequence.toString());
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
     }
 }

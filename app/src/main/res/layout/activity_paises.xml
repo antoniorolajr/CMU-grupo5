@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         tools:ignore="MissingConstraints">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_games"
+            android:id="@+id/toolbar_paises"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -22,11 +23,10 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listViewGames">
-
-    </ListView>
+        android:id="@+id/recycler_view_paises">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
