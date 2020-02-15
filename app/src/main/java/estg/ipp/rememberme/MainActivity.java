@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnSignuP = findViewById(R.id.button2Main);
         tvSignIn = findViewById(R.id.textViewMain);
 
-        Toast.makeText(MainActivity.this, "Create your account here!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "Cria a sua conta aqui!", Toast.LENGTH_SHORT).show();
 
         btnSignuP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,19 +48,19 @@ public class MainActivity extends AppCompatActivity {
                 String pwd = password.getText().toString();
 
                 if(email.isEmpty()){
-                    emailId.setError("Please enter the email");
+                    emailId.setError("Por favor introduza o email");
                     emailId.requestFocus();
                 }else if(pwd.isEmpty()){
-                    password.setError("Please enter your password");
+                    password.setError("Por favor introduza a password");
                     password.requestFocus();
                 }else if(email.isEmpty() && pwd.isEmpty()){
-                    Toast.makeText(MainActivity.this,"Fiels are empty!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Campos vazios!", Toast.LENGTH_SHORT).show();
                 }else if(!(email.isEmpty() && pwd.isEmpty())){
                     mFirebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                Toast.makeText(MainActivity.this,"SignUp Unsuccessful! Please Try Again", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this,"Insucesso no registo! Tente Outra vez", Toast.LENGTH_SHORT).show();
 
                             }else{
                                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     });
                 }
                 else{
-                    Toast.makeText(MainActivity.this,"Error Ocurred!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Ocurreu um erro!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

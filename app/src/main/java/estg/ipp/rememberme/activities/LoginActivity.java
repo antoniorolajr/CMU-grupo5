@@ -158,11 +158,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if(mFirebaseUser != null){
-                    Toast.makeText(LoginActivity.this, "You are logged in!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Logado com sucesso!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }else {
-                    Toast.makeText(LoginActivity.this, "Please login!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Faça o seu login!", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -177,19 +177,19 @@ public class LoginActivity extends AppCompatActivity {
                 String pwd = password.getText().toString();
 
                 if(email.isEmpty()){
-                    emailId.setError("Please enter the email");
+                    emailId.setError("Por favor introduza o email");
                     emailId.requestFocus();
                 }else if(pwd.isEmpty()){
-                    password.setError("Please enter your password");
+                    password.setError("Por favor introduza a password");
                     password.requestFocus();
                 }else if(email.isEmpty() && pwd.isEmpty()){
-                    Toast.makeText(LoginActivity.this,"Fiels are empty!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Os campos estão vazios!", Toast.LENGTH_SHORT).show();
                 }else if(!(email.isEmpty() && pwd.isEmpty())){
                     mFirebaseAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this,"Login Error! Please try again", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"Erro no login! Tente outra vez", Toast.LENGTH_SHORT).show();
                             }else{
                                 Intent intentHome = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(intentHome);
@@ -198,7 +198,7 @@ public class LoginActivity extends AppCompatActivity {
                     });
                 }
                 else{
-                    Toast.makeText(LoginActivity.this,"Error Ocurred!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Erro!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -234,14 +234,11 @@ public class LoginActivity extends AppCompatActivity {
         try {
 
             GoogleSignInAccount acc = completedTask.getResult(ApiException.class);
-            Toast.makeText(LoginActivity.this,"Signed in Sucessfull!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this,"Entrou com sucesso!", Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(acc);
 
-            //Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-            //startActivity(intent);
-
         }catch (ApiException e){
-            Toast.makeText(LoginActivity.this,"Signed in Unsucessfull!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this,"Algo correu mal!", Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(null);
 
         }
@@ -265,8 +262,8 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //nome, email e foto da conta google
     private void updateUI(FirebaseUser fUser){
-
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if(account != null){

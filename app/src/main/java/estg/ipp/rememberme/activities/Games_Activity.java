@@ -1,11 +1,8 @@
 package estg.ipp.rememberme.activities;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +14,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 import estg.ipp.rememberme.R;
-import estg.ipp.rememberme.fragments.FragmentHome;
 
 public class Games_Activity extends AppCompatActivity {
 
@@ -58,7 +50,7 @@ public class Games_Activity extends AppCompatActivity {
 
                 }
                 if(position == 1) {
-                    Intent intent = new Intent(Games_Activity.this, AritmeticGameActivity.class);
+                    Intent intent = new Intent(Games_Activity.this, AritmeticGameMenuActivity.class);
                     startActivity(intent);
 
                 }

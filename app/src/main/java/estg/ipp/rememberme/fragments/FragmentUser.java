@@ -48,7 +48,6 @@ public class FragmentUser extends Fragment {
             }
         });
 
-
         Toolbar toolbar = view.findViewById(R.id.toolbar_user);
         toolbar.setTitle("Perfil do Utilizador");
 

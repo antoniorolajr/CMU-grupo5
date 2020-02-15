@@ -17,10 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.ScanCode"></activity>
-        <activity android:name=".activities.AritmeticGame1Activity" />
+        <activity android:name=".activities.AritmeticGameActivity" />
         <activity android:name=".activities.GaleriaPaisesActivity" />
         <activity android:name=".activities.PaisesActivity" />
-        <activity android:name=".activities.AritmeticGameActivity" />
+        <activity android:name=".activities.AritmeticGameMenuActivity" />
         <activity android:name=".activities.CardsGameActivity" />
         <activity android:name=".activities.NutricaoActivity" />
         <activity android:name=".activities.ClinicasActivity" />
