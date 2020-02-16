@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -16,14 +18,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ScanCode"></activity>
+        <activity android:name=".activities.NotificacaoActivity"></activity>
+        <activity android:name=".activities.ClinicasActivity" />
+        <activity android:name=".activities.ScanCode" />
         <activity android:name=".activities.AritmeticGameActivity" />
         <activity android:name=".activities.GaleriaPaisesActivity" />
         <activity android:name=".activities.PaisesActivity" />
         <activity android:name=".activities.AritmeticGameMenuActivity" />
         <activity android:name=".activities.CardsGameActivity" />
         <activity android:name=".activities.NutricaoActivity" />
-        <activity android:name=".activities.ClinicasActivity" />
         <activity android:name=".activities.Games_Activity" />
         <activity android:name=".activities.MedicamentoActivity" />
         <activity android:name=".activities.HomeActivity" />
@@ -39,6 +42,8 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+
+        <receiver android:name=".alarme.AlertReceiver"></receiver>
     </application>
 
 </manifest>

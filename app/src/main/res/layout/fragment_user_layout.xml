@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.FragmentUser"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -23,26 +25,104 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Nome"
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/editTextDefineNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Edite o seu nome..."
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/textViewGenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Genero"
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/editTextDefineGenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Defina o seu genero..."
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/textViewIdade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Idade"
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/editTextDefineIdade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Edite a sua idade..."
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/textViewContacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Contacto"
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/editTextDefineContacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Edite o contacto de emergência..."
+        android:padding="5dp"
+        />
+
+    <Button
+        android:id="@+id/aply_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fragment do utilizador"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        android:text="Aplicar mudanças"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="222dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Guardar dados editados" />
 
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:ignore="MissingConstraints" />
+        android:layout_gravity="center_horizontal"
+        android:text="Logout da app"
+        />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,6 +1,7 @@
 package estg.ipp.rememberme.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
@@ -12,5 +13,8 @@ public class ClinicasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clinicas);
+
+        Toolbar toolbar = findViewById(R.id.toolbar_clinicas);
+        toolbar.setTitle("Clinicas");
     }
 }

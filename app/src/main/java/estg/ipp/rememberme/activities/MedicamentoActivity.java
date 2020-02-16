@@ -31,13 +31,11 @@ public class MedicamentoActivity extends AppCompatActivity implements View.OnTou
     private static final int EDIT_MODE_ENABLED = 1;
     private static final int EDIT_MODE_DISABLED = 0;
 
-    //ui components
     private EditText mDescricao, mEditNome, mStock, mLocal, mHora;
     private TextView mViewNome;
     private RelativeLayout mCheckContainer, mBackArrowContainer;
     private ImageButton mCheck, mBackArrow;
 
-    //vars
     private boolean mIsNewMedicamento;
     private Medicamento mMedicamentoInicial;
     private GestureDetector mGestureDetector;

@@ -48,7 +48,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="65dp"
-        android:text="P1: 0"
+        android:text="Jogador 1: 0"
         android:textSize="32dp"
         android:textColor="#000000"/>
 
@@ -60,7 +60,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="10dp"
-        android:text="P2: 0"
+        android:text="Jogador 2: 0"
         android:textSize="32dp"
         android:textColor="#000000"/>
 

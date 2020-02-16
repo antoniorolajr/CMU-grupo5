@@ -24,7 +24,7 @@ public class Games_Activity extends AppCompatActivity {
     ListView listView;
 
     String mTitle[] = {"Jogo das cartas" , "Jogo Aritmético"};
-    String mDescription[] = {"Memorize as cartas" ,"Resolva operações aritméticas"};
+    String mDescription[] = {"Memorize as cartas num jogo multiplayer" ,"Exercite o seu cerebro com operações aritméticas"};
 
     int images[] = {R.drawable.memory, R.drawable.aritmetic};
 

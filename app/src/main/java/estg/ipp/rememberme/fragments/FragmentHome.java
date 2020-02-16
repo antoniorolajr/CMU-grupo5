@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import estg.ipp.rememberme.R;
 import estg.ipp.rememberme.activities.ClinicasActivity;
 import estg.ipp.rememberme.activities.Games_Activity;
-import estg.ipp.rememberme.activities.LoginActivity;
+import estg.ipp.rememberme.activities.NotificacaoActivity;
 import estg.ipp.rememberme.activities.NutricaoActivity;
 import estg.ipp.rememberme.activities.PaisesActivity;
 
@@ -37,10 +36,11 @@ public class FragmentHome extends Fragment {
 
     ListView listView;
 
-    String mTitle[] = {"Clínicas" , "Alimentos" , "Jogos" , "Países"};
-    String mDescription[] = {"Ver Clínicas" ,"Restrições Nutritivas", "Jogos de Memória" , "Recorde alguns países"};
+    String mTitle[] = {"Clínicas" , "Alimentos" , "Jogos" , "Países", "Notificações"};
+    String mDescription[] = {"Ver Clínicas perto de si" ,"Restrições Nutritivas", "Lapsos de Memória" ,
+            "Recorde alguns países" , "Defina um alarme"};
 
-    int images[] = {R.drawable.clinica, R.drawable.food, R.drawable.games, R.drawable.paises};
+    int images[] = {R.drawable.clinica, R.drawable.food, R.drawable.games, R.drawable.paises, R.drawable.notification};
 
     @Nullable
     @Override
@@ -77,6 +77,10 @@ public class FragmentHome extends Fragment {
                 }
                 if(position == 3) {
                     Intent intent = new Intent(getContext(), PaisesActivity.class);
+                    startActivity(intent);
+                }
+                if(position == 4) {
+                    Intent intent = new Intent(getContext(), NotificacaoActivity.class);
                     startActivity(intent);
                 }
             }

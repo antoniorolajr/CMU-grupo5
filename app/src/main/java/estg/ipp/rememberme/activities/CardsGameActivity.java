@@ -318,10 +318,10 @@ public class CardsGameActivity extends AppCompatActivity {
             //adiciona pontos ao jogador
             if (turn == 1) {
                 playerPoints++;
-                textViewP1.setText("P1: " + playerPoints);
+                textViewP1.setText("Jogador 1: " + playerPoints);
             } else if (turn == 2) {
                 cpuPoints++;
-                textViewP2.setText("P2: " + cpuPoints);
+                textViewP2.setText("Jogador 2: " + cpuPoints);
             }
         }else {
             iv_11.setImageResource(R.drawable.ic0);
@@ -384,7 +384,7 @@ public class CardsGameActivity extends AppCompatActivity {
                 iv_34.getVisibility() == View.INVISIBLE ) {
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CardsGameActivity.this);
-            alertDialogBuilder.setMessage("GAME OVER\nP1: " + playerPoints + "\nP2: "+cpuPoints).
+            alertDialogBuilder.setMessage("Fim do jogo\nPontuação jogador 1: " + playerPoints + "\nPontuação jogador 2: "+cpuPoints).
                     setCancelable(false)
                     .setPositiveButton("Novo Jogo", new DialogInterface.OnClickListener() {
                         @Override
