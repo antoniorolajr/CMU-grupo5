@@ -1,5 +1,5 @@
 <h1 align="center">
-  NOME DA APP
+ RememberMe
 </h1>
 <h4 align="center">
 CMU project
