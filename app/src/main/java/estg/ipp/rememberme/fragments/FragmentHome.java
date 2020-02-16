@@ -20,7 +20,7 @@ import androidx.fragment.app.Fragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 import estg.ipp.rememberme.R;
-import estg.ipp.rememberme.activities.ClinicasActivity;
+import estg.ipp.rememberme.activities.AtivityC;
 import estg.ipp.rememberme.activities.Games_Activity;
 import estg.ipp.rememberme.activities.NotificacaoActivity;
 import estg.ipp.rememberme.activities.NutricaoActivity;
@@ -61,7 +61,7 @@ public class FragmentHome extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0) {
-                    Intent intent = new Intent(getContext(), ClinicasActivity.class);
+                    Intent intent = new Intent(getContext(), AtivityC.class);
                     startActivity(intent);
 
                 }

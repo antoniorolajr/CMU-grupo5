@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Pharmacy List Map -->
+    <dimen name="clinic_load_text_size">16sp</dimen>
+    <dimen name="clinic_text_margin_top">30dp</dimen>
+    <!-- End -->
+
+</resources>
