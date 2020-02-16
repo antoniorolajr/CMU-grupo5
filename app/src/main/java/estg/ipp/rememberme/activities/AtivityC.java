@@ -28,7 +28,7 @@ public class AtivityC extends AppCompatActivity implements ActivityC {
     private void init() {
 
         FragmentSelect fragment = new FragmentSelect();
-        doFragmentTransaction(fragment, "Fragment Selector", false, "");
+        doFragmentTransaction(fragment, "Procurar clínicas", false, "");
     }
 
     private void doFragmentTransaction(Fragment fragment, String fragment_selector, boolean b, String s) {
@@ -67,6 +67,6 @@ public class AtivityC extends AppCompatActivity implements ActivityC {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        mToolbarTitle.setText("Fragment Selector");
+        mToolbarTitle.setText("Procurar clinicas");
     }
 }

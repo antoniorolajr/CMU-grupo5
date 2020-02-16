@@ -24,22 +24,14 @@
                 android:textSize="16sp"
                 android:textColor="#fff"
                 android:id="@+id/toolbar_tittle">
-
             </TextView>
-
-
         </androidx.appcompat.widget.Toolbar>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/main_container">
-
         </FrameLayout>
-
     </LinearLayout>
-
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

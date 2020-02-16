@@ -2,16 +2,12 @@
     <string name="app_name">RememberMe</string>
     <string name="facebook_app_id">265307874450057</string>
     <string name="fb_login_protocol_scheme">fb265307874450057</string>
-
-    <!-- clinics -->
     <string name="cliniclist_load_text_city">A Procurar pela sua Localização Atual</string>
     <string name="cliniclist_load_text_list">À procura de clinicias</string>
-    <string name="cliniclist_load_text_map">Gerando os Mapa</string>
+    <string name="cliniclist_load_text_map">Gerando os Mapas</string>
     <string name="cliniclist_load_failure_text">Não foi possível encontrar clinicas por perto</string>
     <string name="cliniclist_load_failure_map">Não foi possível gerar o mapa\nPedimos desculpa pela inconveniência</string>
     <string name="cliniclist_load_failure_gps">Ative o acesso à sua localização para ativar o Serviço!</string>
     <string name="cliniclist_load_failure_location">Não foi possível obter a sua localização</string>
-    <string name="cliniclist_load_manual_button">Selecionar Local</string>
     <string name="cliniclist_load_retry_button">Tentar Novamente</string>
-    <!-- End -->
 </resources>

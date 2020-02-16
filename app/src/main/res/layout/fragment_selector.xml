@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Escreva algo"
+            android:text="Escreva a localização"
             android:textColor="#000"
             android:textSize="18sp"
             />
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Pressionar"
+            android:text="Pressionar para encontrar clínicas"
             android:textColor="#000"
             android:textSize="18sp"
             />
@@ -65,12 +65,8 @@
             android:id="@+id/btn_fragment_clinica"
             android:background="@color/bluefab"
             android:padding="10dp"
-            android:layout_marginTop="20dp"/>
-
-
-
-
-
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorWhite"/>
     </LinearLayout>
 
 

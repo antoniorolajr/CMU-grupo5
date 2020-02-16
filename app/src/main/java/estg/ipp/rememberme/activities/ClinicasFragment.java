@@ -57,8 +57,6 @@ public class ClinicasFragment extends Fragment implements OnMapReadyCallback {
 
     private View view;
     private FusedLocationProviderClient mFusedLocationProviderClient;
-    private LocationRequest mLocationRequest;
-    private LocationCallback mLocationCallback;
     private AlertDialog checkGPSdialog;
 
     private SupportMapFragment mMapFragment;
@@ -79,7 +77,7 @@ public class ClinicasFragment extends Fragment implements OnMapReadyCallback {
     private boolean isLoading;
 
     public ClinicasFragment() {
-        // Required empty public constructor
+
     }
 
     private void requestPermissions() {
@@ -191,7 +189,7 @@ public class ClinicasFragment extends Fragment implements OnMapReadyCallback {
         findManualButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isGPSOn = true; // não significa que esteja on, mas é necessário esta linha
+                isGPSOn = true;
                 isMapLoadFailed = false;
                 isGetLocationFailed = false;
                 isLoadFailed = false;
@@ -229,12 +227,12 @@ public class ClinicasFragment extends Fragment implements OnMapReadyCallback {
                 }
 
             } else {
-                Log.w(TAG, "Couldn't Load Map Fragment");
+                Log.w(TAG, "Não conseguiu gerar o mapa!");
                 isMapLoadFailed = true;
                 updateViews();
             }
         } else {
-            Log.w(TAG, "Couldn't get Fragment Activity");
+            Log.w(TAG, "Não conseguiu obter o fragment!");
             return null;
         }
 
@@ -257,7 +255,7 @@ public class ClinicasFragment extends Fragment implements OnMapReadyCallback {
                 .addOnFailureListener(context, new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Failed to get User Location");
+                        Log.w(TAG, "Erro ao tentar encontrar a sua localizção");
                         isMapLoadFailed = true;
                         updateViews();
                     }
@@ -281,7 +279,7 @@ public class ClinicasFragment extends Fragment implements OnMapReadyCallback {
                     @Override
                     public void onFailure(@NonNull Call<LocationModel> call,
                                           @NonNull Throwable t) {
-                        Log.e(TAG, "Couldn't retrieve location from Retrofit", t);
+                        Log.e(TAG, "Não foi possivel retornar a localização através do retrofit", t);
                         isLoadFailed = true;
                         updateViews();
                     }
@@ -313,7 +311,7 @@ public class ClinicasFragment extends Fragment implements OnMapReadyCallback {
                     @Override
                     public void onFailure(@NonNull Call<List<ClinicaModel>> call,
                                           @NonNull Throwable t) {
-                        Log.e(TAG, "Couldn't retrieve location pharmacies from Retrofit", t);
+                        Log.e(TAG, "Não foi possível retornar a localização das clínicas através do Retrofit", t);
                         isLoadFailed = true;
                         updateViews();
                     }
@@ -344,7 +342,7 @@ public class ClinicasFragment extends Fragment implements OnMapReadyCallback {
                     @Override
                     public void onFailure(@NonNull Call<List<ClinicaModel>> call,
                                           @NonNull Throwable t) {
-                        Log.e(TAG, "Couldn't retrieve location pharmacies from Retrofit", t);
+                        Log.e(TAG, "Não foi possível retornar a localização das clínicas através do Retrofit", t);
                         isLoadFailed = true;
                         updateViews();
                     }

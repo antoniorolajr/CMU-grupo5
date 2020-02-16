@@ -48,9 +48,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:layout_marginTop="@dimen/clinic_text_margin_top"
+            android:layout_marginTop="30dp"
             android:textColor="@color/colorGrey"
-            android:textSize="@dimen/clinic_load_text_size"/>
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
@@ -67,24 +67,26 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:text="@string/cliniclist_load_manual_button"/>
+            android:text="Escolher local"
+            android:textColor="@color/colorWhite"/>
 
         <Button
             android:id="@+id/clinic_failure_retry_button"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:layout_marginTop="@dimen/clinic_text_margin_top"
-            android:text="@string/cliniclist_load_manual_button"/>
+            android:layout_marginTop="30dp"
+            android:text="Abrir mapa"
+            android:textColor="@color/colorWhite"/>
 
         <TextView
             android:id="@+id/clinic_failure_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:layout_marginTop="@dimen/clinic_text_margin_top"
+            android:layout_marginTop="30dp"
             android:textColor="@color/bluefab"
-            android:textSize="@dimen/clinic_load_text_size"/>
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
